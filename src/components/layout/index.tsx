@@ -135,7 +135,7 @@ export function Footer() {
     return (
         <footer className="py-12 bg-background border-t border-border">
             <div className="container">
-                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-8 mb-8">
                     <div>
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-2xl font-bold text-primary">{siteConfig.name}</span>
@@ -155,6 +155,21 @@ export function Footer() {
                         <span className="text-sm text-muted">{siteConfig.phone}</span>
                         <span className="text-sm text-muted">{siteConfig.location}</span>
                     </div>
+                </div>
+
+                {/* ORYXEN Credit */}
+                <div className="pt-8 border-t border-border/50 flex justify-center md:justify-end">
+                    <p className="text-xs text-muted/60 font-light">
+                        Made by{" "}
+                        <a
+                            href="https://oryxen.co.in"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-primary transition-colors font-medium tracking-wide"
+                        >
+                            ORYXEN
+                        </a>
+                    </p>
                 </div>
             </div>
         </footer>
