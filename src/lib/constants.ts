@@ -3,8 +3,8 @@
 export const siteConfig = {
   name: "CCC KOLKATA",
   tagline: "Marketing Agency",
-  email: "studio@ccckolkata.com",
-  phone: "+91 98765 43210",
+  email: "mailccc.kolkata@gmail.com",
+  phone: "+91 76679 84730",
   location: "Kolkata, India",
 };
 

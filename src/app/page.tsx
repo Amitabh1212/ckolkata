@@ -7,6 +7,7 @@ import {
   Portfolio,
   Contact,
   Impact,
+  Works,
 } from "@/components/sections";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 
@@ -19,6 +20,7 @@ export default function Home() {
         <Hero />
         <Clients />
         <Impact />
+        <Works />
         <Services />
         <Portfolio />
         <Packages />
