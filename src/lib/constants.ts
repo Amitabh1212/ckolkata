@@ -69,11 +69,11 @@ export const services = [
 // Clients
 // Clients
 export const clients = [
-  { name: "Samsung", logo: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=200&auto=format&fit=crop" },
+  { name: "Samsung", logo: "https://images.samsung.com/is/image/samsung/assets/us/about-us/brand/logo/pc/720_600_1.png?$720_N_PNG$" },
   { name: "Mint Square Cafe", logo: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=200&auto=format&fit=crop" },
   { name: "Nikiee Family Salon", logo: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=200&auto=format&fit=crop" },
-  { name: "KGF Gold Salon", logo: "https://images.unsplash.com/photo-1599305445671-ac291c95aaa9?q=80&w=200&auto=format&fit=crop" },
-  { name: "New Eco Roses", logo: "https://images.unsplash.com/photo-1469334031218-e382a71b716b?q=80&w=200&auto=format&fit=crop" },
+  { name: "KGF Gold Salon", logo: "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1170&auto=format&fit=crop" },
+  { name: "New Eco Roses", logo: "https://lh3.googleusercontent.com/p/AF1QipMZru8IH_dU7N3UnZu9Bw42qV6P3fGPPsUBJIal=s680-w680-h510-rw" },
   { name: "Entrance Academy", logo: "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=200&auto=format&fit=crop" },
   { name: "KZAR Select", logo: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=200&auto=format&fit=crop" },
   { name: "KZAR Boutique", logo: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=200&auto=format&fit=crop" },
