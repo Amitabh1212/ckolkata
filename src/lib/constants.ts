@@ -69,7 +69,7 @@ export const services = [
 // Clients
 // Clients
 export const clients = [
-  { name: "Samsung", logo: "https://images.samsung.com/is/image/samsung/assets/us/about-us/brand/logo/pc/720_600_1.png?$720_N_PNG$" },
+  { name: "Samsung", logo: "https://static.vecteezy.com/system/resources/previews/020/336/289/non_2x/samsung-logo-samsung-icon-free-free-vector.jpg" },
   { name: "Mint Square Cafe", logo: "https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=200&auto=format&fit=crop" },
   { name: "Nikiee Family Salon", logo: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=200&auto=format&fit=crop" },
   { name: "KGF Gold Salon", logo: "https://images.unsplash.com/photo-1633681926035-ec1ac984418a?q=80&w=1170&auto=format&fit=crop" },
