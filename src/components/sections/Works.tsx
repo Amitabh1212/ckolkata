@@ -111,7 +111,7 @@ export function Works() {
                 {/* Marquee Track */}
                 <div
                     ref={marqueeRef}
-                    className="flex gap-6 py-4"
+                    className="flex gap-6 py-4 w-max"
                     style={{
                         animation: `marquee 60s linear infinite`,
                         animationPlayState: isHovered ? "paused" : "running",
