@@ -2,6 +2,7 @@
   "name": "ckol",
   "version": "0.1.0",
   "private": true,
+  "repository": "https://github.com/Amitabh1212/ckolkata",
   "scripts": {
     "dev": "next dev",
     "build": "next build",

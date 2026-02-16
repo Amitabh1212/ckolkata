@@ -62,6 +62,7 @@ function VideoCard({ video, index }: { video: string; index: number }) {
                 ref={videoRef}
                 src={video}
                 className="w-full h-full object-cover"
+                autoPlay
                 loop
                 muted
                 playsInline
@@ -127,17 +128,6 @@ export function Works() {
                 </div>
             </div>
 
-            {/* CSS Animation */}
-            <style jsx>{`
-                @keyframes marquee {
-                    0% {
-                        transform: translateX(0);
-                    }
-                    100% {
-                        transform: translateX(-50%);
-                    }
-                }
-            `}</style>
         </section>
     );
 }

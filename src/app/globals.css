@@ -237,3 +237,14 @@ body {
   -webkit-text-fill-color: transparent;
   animation: shine 3s linear infinite;
 }
+
+/* Marquee Animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-50%);
+  }
+}
