@@ -21,27 +21,26 @@ function VideoCard({ video, index }: { video: string; index: number }) {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                setIsVisible(entry.isIntersecting);
-            },
-            { threshold: 0.1, rootMargin: "100px" }
-        );
-
+        // Eagerly load video so it is ready when scrolled into view
         if (videoRef.current) {
-            observer.observe(videoRef.current);
+            videoRef.current.load();
         }
 
+        const observer = new IntersectionObserver(
+            ([entry]) => setIsVisible(entry.isIntersecting),
+            { threshold: 0.05, rootMargin: "400px" }
+        );
+
+        if (videoRef.current) observer.observe(videoRef.current);
         return () => observer.disconnect();
     }, []);
 
     useEffect(() => {
-        if (videoRef.current) {
-            if (isVisible && isLoaded) {
-                videoRef.current.play().catch(() => { });
-            } else {
-                videoRef.current.pause();
-            }
+        if (!videoRef.current) return;
+        if (isVisible) {
+            videoRef.current.play().catch(() => {});
+        } else {
+            videoRef.current.pause();
         }
     }, [isVisible, isLoaded]);
 
@@ -51,7 +50,6 @@ function VideoCard({ video, index }: { video: string; index: number }) {
             whileHover={{ scale: 1.02 }}
             transition={{ duration: 0.3 }}
         >
-            {/* Placeholder while loading */}
             {!isLoaded && (
                 <div className="absolute inset-0 bg-gradient-to-br from-muted/20 to-muted/5 animate-pulse flex items-center justify-center">
                     <div className="w-12 h-12 border-2 border-muted/30 border-t-primary rounded-full animate-spin" />
@@ -66,14 +64,12 @@ function VideoCard({ video, index }: { video: string; index: number }) {
                 loop
                 muted
                 playsInline
-                preload="metadata"
+                preload="auto"
                 onLoadedData={() => setIsLoaded(true)}
             />
 
-            {/* Gradient overlay */}
             <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
 
-            {/* Work number badge */}
             <div className="absolute bottom-4 left-4 px-3 py-1 bg-background/80 backdrop-blur-sm rounded-full text-xs font-medium">
                 Work {index + 1}
             </div>
@@ -82,7 +78,6 @@ function VideoCard({ video, index }: { video: string; index: number }) {
 }
 
 export function Works() {
-    const marqueeRef = useRef<HTMLDivElement>(null);
     const [isHovered, setIsHovered] = useState(false);
 
     return (
@@ -98,36 +93,29 @@ export function Works() {
                 </h2>
             </div>
 
-            {/* Marquee Container */}
             <div
                 className="relative"
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
             >
-                {/* Gradient Edges */}
                 <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10 pointer-events-none" />
                 <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10 pointer-events-none" />
 
-                {/* Marquee Track */}
                 <div
-                    ref={marqueeRef}
                     className="flex gap-6 py-4 w-max"
                     style={{
-                        animation: `marquee 60s linear infinite`,
+                        animation: "marquee 60s linear infinite",
                         animationPlayState: isHovered ? "paused" : "running",
                     }}
                 >
-                    {/* First set */}
                     {works.map((work, index) => (
                         <VideoCard key={`first-${work.id}`} video={work.video} index={index} />
                     ))}
-                    {/* Duplicate for seamless loop */}
                     {works.map((work, index) => (
                         <VideoCard key={`second-${work.id}`} video={work.video} index={index} />
                     ))}
                 </div>
             </div>
-
         </section>
     );
 }

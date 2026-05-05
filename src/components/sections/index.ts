@@ -6,3 +6,4 @@ export { Portfolio } from "./Portfolio";
 export { Contact } from "./Contact";
 export { Impact } from "./Impact";
 export { Works } from "./Works";
+export { About } from "./About";

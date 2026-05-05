@@ -1,13 +1,14 @@
 import { Header, Footer } from "@/components/layout";
 import {
   Hero,
-  Services,
   Clients,
-  Packages,
-  Portfolio,
-  Contact,
+  About,
+  Services,
   Impact,
   Works,
+  Portfolio,
+  Packages,
+  Contact,
 } from "@/components/sections";
 import { CustomCursor } from "@/components/ui/CustomCursor";
 
@@ -19,9 +20,10 @@ export default function Home() {
       <main>
         <Hero />
         <Clients />
+        <About />
+        <Services />
         <Impact />
         <Works />
-        <Services />
         <Portfolio />
         <Packages />
         <Contact />
