@@ -7,9 +7,16 @@ const LightPillar = dynamic(() => import("@/components/ui/LightPillar"), { ssr: 
 
 export function Hero() {
     return (
-        <section className="min-h-screen relative overflow-hidden flex items-center">
-
-            <div className="absolute inset-0 z-0">
+        <section
+            className="relative overflow-hidden flex items-center"
+            style={{
+                // 100dvh = dynamic viewport height — accounts for mobile browser chrome
+                // Falls back to 100vh on older browsers
+                minHeight: "100dvh",
+            }}
+        >
+            {/* WebGL background — explicit inset-0 so it always fills whatever height the section is */}
+            <div className="absolute inset-0 z-0" style={{ width: "100%", height: "100%" }}>
                 <LightPillar
                     topColor="#5227FF"
                     bottomColor="#FF9FFC"
@@ -31,7 +38,7 @@ export function Hero() {
             <div className="blob-blue"   style={{ width: 400, height: 400, bottom: "5%", left: "30%" }} />
 
             <div className="container relative z-10 pt-24 md:pt-28 pb-12">
-                {/* On mobile push content ~20vh lower than center; on md+ sits naturally centered */}
+                {/* Push content ~20vh lower on mobile, stays centered on desktop */}
                 <div className="max-w-4xl mt-[20vh] md:mt-0">
 
                     {/* Heading */}
