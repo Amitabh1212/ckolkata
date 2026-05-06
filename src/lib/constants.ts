@@ -17,56 +17,70 @@ export const navigation = [
   { name: "Contact", href: "#contact" },
 ];
 
-// Services with images
+// Services with images and descriptions
 export const services = [
   {
     id: "branding",
     title: "Brand Strategy",
+    description: "Build a clear, powerful identity that sets your brand apart from the competition.",
     image: "/animations/brand statergy.jpg",
   },
   {
     id: "content",
     title: "Content Strategy",
+    description: "Craft content that connects, converts, and consistently grows your audience.",
     image: "/animations/content statergy.jpg",
   },
   {
     id: "social",
     title: "Social Media",
+    description: "Grow your presence with consistent, high-impact social content that keeps people coming back.",
     image: "/animations/social media.jpg",
   },
   {
     id: "influencer",
     title: "Influencer Marketing",
+    description: "Partner with the right voices to amplify your brand's reach and build real trust.",
     image: "/animations/influencer marketing.jpg",
   },
   {
     id: "performance",
     title: "Performance Marketing",
+    description: "Data-driven ad campaigns built to deliver measurable results and a strong return.",
     image: "/animations/performance marketing.jpg",
   },
   {
     id: "photography",
     title: "Photography",
+    description: "Professional visuals that tell your brand's story and make people stop scrolling.",
     image: "/animations/photography.jpg",
   },
   {
     id: "videography",
     title: "Videography",
+    description: "Compelling video content from concept to final cut, built to engage and convert.",
     image: "/animations/videography.jpg",
   },
   {
     id: "web",
     title: "Web Development",
+    description: "Fast, stunning websites built to convert visitors into loyal customers.",
     image: "/animations/web development.jpg",
   },
   {
     id: "design",
     title: "Creative Design",
+    description: "Bold, scroll-stopping design for every platform, campaign, and touchpoint.",
+    image: "/animations/creative design.jpg",
+  },
+  {
+    id: "events",
+    title: "Event Management",
+    description: "End-to-end event planning and brand activations that leave a lasting impression.",
     image: "/animations/creative design.jpg",
   },
 ];
 
-// Clients
 // Clients
 export const clients = [
   { name: "Samsung", logo: "https://static.vecteezy.com/system/resources/previews/020/336/289/non_2x/samsung-logo-samsung-icon-free-free-vector.jpg" },

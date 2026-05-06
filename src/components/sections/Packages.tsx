@@ -3,6 +3,13 @@
 import { motion } from "framer-motion";
 import { packages } from "@/lib/constants";
 
+const WA_NUMBER = "917667984730";
+
+function buildWhatsAppLink(packageName: string) {
+    const text = `Hi CCC Kolkata! I am interested in the ${packageName} package.`;
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+}
+
 const tierColors: Record<string, string> = {
     Basic: "#888899",
     Standard: "#7c3aed",
@@ -79,6 +86,7 @@ export function Packages() {
 function PackageCard({ pkg, index }: { pkg: (typeof packages)[0]; index: number }) {
     const tierColor = tierColors[pkg.tier] ?? "#888899";
     const isHighlight = pkg.highlight;
+    const waLink = buildWhatsAppLink(pkg.name);
 
     return (
         <motion.div
@@ -167,9 +175,11 @@ function PackageCard({ pkg, index }: { pkg: (typeof packages)[0]; index: number 
                     ))}
                 </ul>
 
-                {/* CTA button */}
+                {/* CTA button — opens WhatsApp with package name */}
                 <motion.a
-                    href="#contact"
+                    href={waLink}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block w-full text-center py-3.5 rounded-2xl text-sm font-semibold transition-all duration-300"
                     style={isHighlight ? {
                         background: "linear-gradient(135deg, #7c3aed, #a855f7)",
